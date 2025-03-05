@@ -222,18 +222,23 @@ function createDataString(data) {
 
 // 데이터 레이어 로드 함수
 function loadDataLayer(map, data) {
-    $.ajax({
-        url:'https://raw.githubusercontent.com/bootkorea/UHI-Monitor/main/HeatIslandMap/app/src/main/assets/sggnm.geojson',
-        dataType: 'json',
-        success: function(response) {
-            //$('#isCoordinatesLoaded').html('url을 통해서 geojson을 불러오는 것까지 성공');
-            startDataLayer(map, response, data);
-            //$('#isCoordinatesLoaded').html('불러온 geojson을 가지고 서울시 레이어 추가 완료');
-        },
-        error: function(xhr, status, error) {
-            $('#isCoordinatesLoaded').html('데이터를 불러오는 데 실패했습니다');
-        }
-    });
+//    $.ajax({
+//        url:'https://raw.githubusercontent.com/bootkorea/UHI-Monitor/main/HeatIslandMap/app/src/main/assets/sggnm.geojson',
+//        dataType: 'json',
+//        success: function(response) {
+//            console.log("success response");
+//            //$('#isCoordinatesLoaded').html('url을 통해서 geojson을 불러오는 것까지 성공');
+//            startDataLayer(map, response, data);
+//            //$('#isCoordinatesLoaded').html('불러온 geojson을 가지고 서울시 레이어 추가 완료');
+//        },
+//        error: function(xhr, status, error) {
+//            console.log("fail response");
+//            $('#isCoordinatesLoaded').html('데이터를 불러오는 데 실패했습니다');
+//        }
+//    });
+
+    // sggnm.geojson 파일은 로컬에 저장되어있기 때문에, 외부에서 가져올 필요가 없다
+    startDataLayer(map, sggnm_json, data);
 }
 
 //지도에 레이어를 추가함

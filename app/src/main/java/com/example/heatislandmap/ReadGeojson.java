@@ -23,7 +23,7 @@ public class ReadGeojson {
     protected String readGeoJsonFile(@NonNull Context context) { //GeoJsonFile 읽기
         String json = null;
         try {
-            InputStream is = context.getAssets().open("sggnm.geojson");
+            InputStream is = context.getAssets().open("www/sggnm.geojson");
 
             int size = is.available(); // 파일 사이즈
             byte[] buffer = new byte[size]; // 파일 사이즈만큼 버퍼 생성
